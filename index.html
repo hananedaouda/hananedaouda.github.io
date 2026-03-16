@@ -32,7 +32,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NAVBAR ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -95,7 +94,6 @@
   }
   .burger span { display: block; width: 22px; height: 2px; background: var(--text); transition: all 0.3s; }
 
-  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -108,15 +106,8 @@
 
   .hero::before {
     content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.08) 2px,
-      rgba(0,0,0,0.08) 4px
-    );
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
     pointer-events: none;
     z-index: 0;
   }
@@ -192,7 +183,6 @@
     animation: fadeUp 0.6s 0.3s ease both;
   }
 
-  /* ── BOUTONS ── */
   .btn {
     display: inline-block;
     padding: 0.7rem 1.5rem;
@@ -209,7 +199,6 @@
   .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
   .btn-secondary:hover { border-color: var(--muted); transform: translateY(-2px); }
 
-  /* ── SECTIONS ── */
   section { padding: 6rem 4rem; }
 
   .section-label {
@@ -228,7 +217,6 @@
     margin-bottom: 3rem;
   }
 
-  /* ── À PROPOS ── */
   .about { background: var(--surface); }
 
   .about-grid {
@@ -275,7 +263,6 @@
   .info-row .lbl { color: var(--muted); white-space: nowrap; }
   .info-row .val { color: var(--green); text-align: right; }
 
-  /* ── COMPÉTENCES ── */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -307,37 +294,66 @@
     transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
   }
 
-  /* ── PROJETS ── */
   .projects { background: var(--surface); }
 
-  .projects-empty {
-    border: 2px dashed var(--border);
-    border-radius: 12px;
-    padding: 4rem 2rem;
-    text-align: center;
-    color: var(--muted);
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
-  .projects-empty .icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 1rem;
-    animation: rock 2.5s ease-in-out infinite;
-  }
-  @keyframes rock {
-    0%, 100% { transform: rotate(-6deg); }
-    50% { transform: rotate(6deg); }
-  }
-  .projects-empty p { margin-bottom: 0.3rem; }
-  .projects-empty small { color: var(--accent); font-size: 0.72rem; letter-spacing: 0.1em; }
 
-  /* ── CONTACT ── */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.25s;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(124,106,255,0.1);
+  }
+
+  .project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .project-icon { font-size: 1.8rem; }
+
+  .project-links { display: flex; gap: 0.5rem; }
+
+  .project-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+  .project-tags span {
+    background: rgba(124,106,255,0.1);
+    border: 1px solid rgba(124,106,255,0.2);
+    color: var(--accent);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+
   .contact { background: var(--surface); }
 
-  .contact-intro {
-    color: var(--muted);
-    margin-bottom: 2.5rem;
-    max-width: 500px;
-  }
+  .contact-intro { color: var(--muted); margin-bottom: 2.5rem; max-width: 500px; }
 
   .contact-layout {
     display: grid;
@@ -365,11 +381,8 @@
     width: 38px; height: 38px;
     border-radius: 8px;
     background: rgba(124,106,255,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
   }
 
   .contact-item-text { display: flex; flex-direction: column; }
@@ -411,7 +424,6 @@
   }
   .form-success.show { display: flex; }
 
-  /* ── FOOTER ── */
   footer {
     text-align: center;
     padding: 2rem 1.5rem;
@@ -449,19 +461,17 @@
     color: var(--muted);
     line-height: 2;
   }
-
   .footer-name { color: var(--accent); }
   .footer-city { color: var(--green); }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.on { opacity: 1; transform: translateY(0); }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -473,12 +483,12 @@
     .photo-box { margin: 0 auto; }
     .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
     .form-row { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav id="navbar">
   <span class="logo">HD.</span>
   <ul class="nav-links" id="nav-links">
@@ -490,7 +500,6 @@
   <button class="burger" id="burger"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-tag">PORTO-NOVO, BENIN</div>
   <h1>
@@ -507,7 +516,6 @@
   </div>
 </section>
 
-<!-- À PROPOS -->
 <section class="about" id="about">
   <p class="section-label reveal">// 01</p>
   <h2 class="section-title reveal">À propos</h2>
@@ -530,7 +538,6 @@
   </div>
 </section>
 
-<!-- COMPÉTENCES -->
 <section id="skills">
   <p class="section-label reveal">// 02</p>
   <h2 class="section-title reveal">Compétences</h2>
@@ -544,40 +551,29 @@
   </div>
 </section>
 
-<!-- PROJETS -->
 <section class="projects" id="projects">
   <p class="section-label reveal">// 03</p>
   <h2 class="section-title reveal">Projets</h2>
-
-  <!--
-  =====================================================
-  POUR AJOUTER UN PROJET PLUS TARD :
-  Supprime le bloc "projects-empty" et colle ceci :
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;">
-    <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:all 0.25s;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-        <span style="font-size:1.8rem;">📋</span>
-        <a href="LIEN_GITHUB" target="_blank" class="btn btn-secondary" style="font-size:0.72rem;padding:0.35rem 0.8rem;">GitHub</a>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-top">
+        <span class="project-icon">🎯</span>
+        <div class="project-links">
+          <a href="https://hananedaouda.github.io/quiz-app" target="_blank" class="btn btn-primary" style="font-size:0.72rem;padding:0.35rem 0.9rem;">Demo</a>
+          <a href="https://github.com/hananedaouda/quiz-app" target="_blank" class="btn btn-secondary" style="font-size:0.72rem;padding:0.35rem 0.9rem;">GitHub</a>
+        </div>
       </div>
-      <h3 style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Nom du projet</h3>
-      <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1rem;">Description courte.</p>
-      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-        <span style="background:rgba(124,106,255,0.1);border:1px solid rgba(124,106,255,0.2);color:var(--accent);font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:4px;">Python</span>
+      <h3>Quiz Interactif</h3>
+      <p>Quiz avec 6 catégories, 60 questions, timer animé et système de score complet.</p>
+      <div class="project-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
       </div>
     </div>
   </div>
-  =====================================================
-  -->
-
-  <div class="projects-empty reveal">
-    <span class="icon">🚧</span>
-    <p>Projets en cours de développement...</p>
-    <small>ILS ARRIVENT BIENTÔT</small>
-  </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <p class="section-label reveal">// 04</p>
   <h2 class="section-title reveal">Contact</h2>
@@ -633,7 +629,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-pixels">
     <div class="pixel-block"></div>
@@ -655,7 +650,6 @@
 </footer>
 
 <script>
-  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
@@ -666,7 +660,6 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Barres compétences
   const bObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -677,13 +670,11 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('.skill-fill').forEach(b => bObs.observe(b));
 
-  // Navbar scroll
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').style.boxShadow =
       window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.4)' : 'none';
   });
 
-  // Formulaire Formspree
   const form = document.getElementById('contact-form');
   const success = document.getElementById('form-success');
   form.addEventListener('submit', async (e) => {
@@ -711,7 +702,6 @@
     }
   });
 
-  // Burger mobile
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('nav-links');
   burger.addEventListener('click', () => {
