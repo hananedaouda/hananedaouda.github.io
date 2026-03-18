@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DAOUDA Hanane — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syne:wght@400;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bg: #0f0f0f;
@@ -62,13 +62,10 @@
     animation: blink 1s step-end infinite;
   }
 
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
 
   @keyframes logoBlink {
-    0%, 95%, 100% { text-shadow: 0 0 8px rgba(124,106,255,0.6); }
+    0%,95%,100% { text-shadow: 0 0 8px rgba(124,106,255,0.6); }
     96% { text-shadow: none; opacity: 0.5; }
     97% { text-shadow: 0 0 8px rgba(124,106,255,0.6); opacity: 1; }
     98% { text-shadow: none; opacity: 0.5; }
@@ -76,24 +73,13 @@
   }
 
   .nav-links { list-style: none; display: flex; gap: 2rem; }
-  .nav-links a {
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 0.82rem;
-    transition: color 0.2s;
-  }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.82rem; transition: color 0.2s; }
   .nav-links a:hover { color: var(--text); }
 
-  .burger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-  }
+  .burger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
   .burger span { display: block; width: 22px; height: 2px; background: var(--text); transition: all 0.3s; }
 
+  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -126,12 +112,7 @@
     letter-spacing: 1px;
   }
 
-  .hero-tag::before {
-    content: '▶';
-    color: var(--green);
-    animation: blink 1.5s step-end infinite;
-    font-size: 0.6rem;
-  }
+  .hero-tag::before { content: '▶'; color: var(--green); animation: blink 1.5s step-end infinite; font-size: 0.6rem; }
 
   .hero h1 {
     font-family: 'Syne', sans-serif;
@@ -153,13 +134,10 @@
     letter-spacing: 3px;
   }
 
-  .hero h1 .highlight {
-    color: var(--accent);
-    animation: glitch 6s infinite;
-  }
+  .hero h1 .highlight { color: var(--accent); animation: glitch 6s infinite; }
 
   @keyframes glitch {
-    0%, 90%, 100% { text-shadow: none; transform: none; }
+    0%,90%,100% { text-shadow: none; transform: none; }
     91% { text-shadow: -2px 0 var(--red), 2px 0 var(--green); transform: translateX(1px); }
     92% { text-shadow: 2px 0 var(--red), -2px 0 var(--green); transform: translateX(-1px); }
     93% { text-shadow: none; transform: none; }
@@ -167,22 +145,12 @@
     95% { text-shadow: none; transform: none; }
   }
 
-  .hero-sub {
-    color: var(--muted);
-    font-size: 0.95rem;
-    max-width: 500px;
-    margin-bottom: 2.5rem;
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
+  .hero-sub { color: var(--muted); font-size: 0.95rem; max-width: 500px; margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.2s ease both; }
   .hero-sub strong { color: var(--text); font-weight: 500; }
 
-  .hero-btns {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
+  .hero-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
 
+  /* ── BOUTONS ── */
   .btn {
     display: inline-block;
     padding: 0.7rem 1.5rem;
@@ -198,191 +166,80 @@
   .btn-primary:hover { background: #6a58f0; transform: translateY(-2px); }
   .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
   .btn-secondary:hover { border-color: var(--muted); transform: translateY(-2px); }
+  .btn-sm { padding: 0.4rem 0.9rem; font-size: 0.72rem; }
 
+  /* ── SECTIONS ── */
   section { padding: 6rem 4rem; }
 
-  .section-label {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--accent);
-    margin-bottom: 0.4rem;
-  }
+  .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.4rem; }
 
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 3rem;
-  }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 3rem; }
 
+  /* ── À PROPOS ── */
   .about { background: var(--surface); }
 
-  .about-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
+  .about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
 
   .photo-box {
     width: 200px; height: 240px;
     border-radius: 12px;
     background: var(--card);
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-family: 'Syne', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    overflow: hidden;
-    position: relative;
+    font-size: 2.5rem; font-weight: 800; color: var(--accent);
+    overflow: hidden; position: relative;
   }
 
-  .photo-box img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    position: absolute; inset: 0;
-  }
+  .photo-box img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
 
   .about-text { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.9rem; }
   .about-text strong { color: var(--text); font-weight: 500; }
 
   .info-list { margin-top: 1.5rem; }
-  .info-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.65rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.82rem;
-    gap: 1rem;
-  }
+  .info-row { display: flex; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; gap: 1rem; }
   .info-row .lbl { color: var(--muted); white-space: nowrap; }
   .info-row .val { color: var(--green); text-align: right; }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-  }
+  /* ── COMPÉTENCES ── */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
 
-  .skill-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    transition: all 0.25s;
-  }
+  .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1rem; text-align: center; transition: all 0.25s; }
   .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); }
   .skill-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
-  .skill-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 0.82rem;
-    margin-bottom: 0.8rem;
-    color: var(--text);
-  }
+  .skill-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; margin-bottom: 0.8rem; color: var(--text); }
   .skill-bar { height: 3px; background: var(--border); border-radius: 999px; overflow: hidden; }
-  .skill-fill {
-    height: 100%; width: 0;
-    border-radius: 999px;
-    background: var(--accent);
-    transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
-  }
+  .skill-fill { height: 100%; width: 0; border-radius: 999px; background: var(--accent); transition: width 1.2s cubic-bezier(0.16,1,0.3,1); }
 
+  /* ── PROJETS ── */
   .projects { background: var(--surface); }
 
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
 
-  .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: all 0.25s;
-  }
+  .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; transition: all 0.25s; }
+  .project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(124,106,255,0.1); }
 
-  .project-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(124,106,255,0.1);
-  }
-
-  .project-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
+  .project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
   .project-icon { font-size: 1.8rem; }
   .project-links { display: flex; gap: 0.5rem; }
 
-  .project-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-
-  .project-card p {
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-  }
+  .project-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .project-card p { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.6; }
 
   .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .project-tags span { background: rgba(124,106,255,0.1); border: 1px solid rgba(124,106,255,0.2); color: var(--accent); font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; }
 
-  .project-tags span {
-    background: rgba(124,106,255,0.1);
-    border: 1px solid rgba(124,106,255,0.2);
-    color: var(--accent);
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-  }
-
+  /* ── CONTACT ── */
   .contact { background: var(--surface); }
   .contact-intro { color: var(--muted); margin-bottom: 2.5rem; max-width: 500px; }
 
-  .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
   .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
 
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.2rem;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
+  .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.2rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; transition: all 0.2s; }
   .contact-item:hover { border-color: var(--accent); transform: translateX(4px); }
 
-  .contact-item-icon {
-    width: 38px; height: 38px;
-    border-radius: 8px;
-    background: rgba(124,106,255,0.1);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; flex-shrink: 0;
-  }
-
+  .contact-item-icon { width: 38px; height: 38px; border-radius: 8px; background: rgba(124,106,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
   .contact-item-text { display: flex; flex-direction: column; }
   .contact-item-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
   .contact-item-val { font-size: 0.85rem; color: var(--text); }
@@ -391,50 +248,19 @@
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
   .form-group label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-  .form-group input, .form-group textarea {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.88rem;
-    outline: none;
-    transition: border-color 0.2s;
-    resize: none;
-  }
+  .form-group input, .form-group textarea { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; resize: none; }
   .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
   .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); opacity: 0.5; }
   .form-group textarea { height: 130px; }
   .form-submit { align-self: flex-start; }
 
-  .form-success {
-    display: none;
-    align-items: center;
-    gap: 0.6rem;
-    background: rgba(61,214,140,0.1);
-    border: 1px solid rgba(61,214,140,0.3);
-    color: var(--green);
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-  }
+  .form-success { display: none; align-items: center; gap: 0.6rem; background: rgba(61,214,140,0.1); border: 1px solid rgba(61,214,140,0.3); color: var(--green); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 0.85rem; margin-top: 0.5rem; }
   .form-success.show { display: flex; }
 
-  footer {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    border-top: 1px solid var(--border);
-  }
+  /* ── FOOTER ── */
+  footer { text-align: center; padding: 2rem 1.5rem; border-top: 1px solid var(--border); }
 
-  .footer-pixels {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin-bottom: 1.2rem;
-  }
-
+  .footer-pixels { display: flex; justify-content: center; gap: 4px; margin-bottom: 1.2rem; }
   .pixel-block { width: 8px; height: 8px; animation: pixelFade 3s ease-in-out infinite; }
   .pixel-block:nth-child(1)  { background: var(--accent); animation-delay: 0.0s; }
   .pixel-block:nth-child(2)  { background: var(--green);  animation-delay: 0.2s; }
@@ -447,26 +273,13 @@
   .pixel-block:nth-child(9)  { background: var(--accent); animation-delay: 1.6s; }
   .pixel-block:nth-child(10) { background: var(--green);  animation-delay: 1.8s; }
 
-  @keyframes pixelFade {
-    0%, 100% { opacity: 1; transform: scaleY(1); }
-    50% { opacity: 0.3; transform: scaleY(0.4); }
-  }
+  @keyframes pixelFade { 0%,100%{opacity:1;transform:scaleY(1);} 50%{opacity:0.3;transform:scaleY(0.4);} }
 
-  .footer-text {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: var(--muted);
-    line-height: 2;
-  }
+  .footer-text { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 800; color: var(--muted); line-height: 2; }
   .footer-name { color: var(--accent); }
   .footer-city { color: var(--green); }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.on { opacity: 1; transform: translateY(0); }
 
@@ -519,7 +332,7 @@
   <h2 class="section-title reveal">À propos</h2>
   <div class="about-grid">
     <div class="photo-box reveal">
-      <img src="photo.jpeg" alt="DAOUDA Hanane" onerror="this.remove()"/>
+      <img src="photo.jpeg" alt="DAOUDA Hanane" onerror="this.style.display='none'"/>
       HD
     </div>
     <div class="reveal">
@@ -554,59 +367,47 @@
   <h2 class="section-title reveal">Projets</h2>
   <div class="projects-grid">
 
-    <!-- PROJET 1 : Quiz -->
+    <!-- Quiz -->
     <div class="project-card reveal">
       <div class="project-top">
         <span class="project-icon">🎯</span>
         <div class="project-links">
-          <a href="https://hananedaouda.github.io/quiz-app" target="_blank" class="btn btn-primary" style="font-size:0.72rem;padding:0.35rem 0.9rem;">Demo</a>
-          <a href="https://github.com/hananedaouda/quiz-app" target="_blank" class="btn btn-secondary" style="font-size:0.72rem;padding:0.35rem 0.9rem;">GitHub</a>
+          <a href="https://hananedaouda.github.io/quiz-app" target="_blank" class="btn btn-primary btn-sm">Demo</a>
+          <a href="https://github.com/hananedaouda/quiz-app" target="_blank" class="btn btn-secondary btn-sm">GitHub</a>
         </div>
       </div>
       <h3>Quiz Interactif</h3>
-      <p>Quiz avec 6 catégories, 60 questions, timer animé et système de score complet.</p>
-      <div class="project-tags">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span>
-      </div>
+      <p>Quiz avec 6 catégories, 300 questions, timer animé et système de score complet.</p>
+      <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
     </div>
 
-    <!-- PROJET 2 : ReelFinder -->
+    <!-- ReelFinder -->
     <div class="project-card reveal">
       <div class="project-top">
         <span class="project-icon">🎬</span>
         <div class="project-links">
-          <a href="https://hananedaouda.github.io/reelfinder" target="_blank" class="btn btn-primary" style="font-size:0.72rem;padding:0.35rem 0.9rem;">Demo</a>
-          <a href="https://github.com/hananedaouda/reelfinder" target="_blank" class="btn btn-secondary" style="font-size:0.72rem;padding:0.35rem 0.9rem;">GitHub</a>
+          <a href="https://hananedaouda.github.io/reelfinder" target="_blank" class="btn btn-primary btn-sm">Demo</a>
+          <a href="https://github.com/hananedaouda/reelfinder" target="_blank" class="btn btn-secondary btn-sm">GitHub</a>
         </div>
       </div>
       <h3>ReelFinder</h3>
       <p>Application de recherche de films et séries avec 8 catégories, fiches détaillées et notes.</p>
-      <div class="project-tags">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>API TMDB</span>
-      </div>
+      <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>API TMDB</span></div>
     </div>
 
-    <!--
-    =====================================================
-    POUR AJOUTER UN PROJET PLUS TARD :
-    Copie-colle ce bloc et modifie les infos :
-
+    <!-- Calculatrice -->
     <div class="project-card reveal">
       <div class="project-top">
-        <span class="project-icon">📋</span>
+        <span class="project-icon">🧮</span>
         <div class="project-links">
-          <a href="LIEN_DEMO" target="_blank" class="btn btn-primary" style="font-size:0.72rem;padding:0.35rem 0.9rem;">Demo</a>
-          <a href="LIEN_GITHUB" target="_blank" class="btn btn-secondary" style="font-size:0.72rem;padding:0.35rem 0.9rem;">GitHub</a>
+          <a href="https://hananedaouda.github.io/calculatrice" target="_blank" class="btn btn-primary btn-sm">Demo</a>
+          <a href="https://github.com/hananedaouda/calculatrice" target="_blank" class="btn btn-secondary btn-sm">GitHub</a>
         </div>
       </div>
-      <h3>Nom du projet</h3>
-      <p>Description courte du projet.</p>
-      <div class="project-tags">
-        <span>Python</span><span>SQL</span>
-      </div>
+      <h3>CalcPro</h3>
+      <p>Calculatrice scientifique avec traceur de graphes interactif — zoom, déplacement et 4 fonctions simultanées.</p>
+      <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Math.js</span></div>
     </div>
-    =====================================================
-    -->
 
   </div>
 </section>
@@ -714,7 +515,7 @@
 
   const form = document.getElementById('contact-form');
   const success = document.getElementById('form-success');
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Envoi...';
